@@ -1,0 +1,39 @@
+.footer{
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    background-color:rgba(26, 26, 26, 1);
+    color:white;
+    justify-content: space-around;
+}
+
+/* Styling for left items */
+.footer-left{
+    margin-top:30px;
+    margin-bottom:50px;
+    width:300px;
+}
+
+.footer-left p{
+    margin-top:30px;
+}
+
+.important-links{
+    min-width:200px;
+    margin-top:40px;
+}
+
+.important-links ul li{
+    margin-left:-30px;
+    padding-top:20px;
+    list-style-type: none;
+}
+
+/* Contack Us */
+.Contact-us{
+    margin-top:40px;
+}
+
+.Contact-us .social-media{
+    margin-top:20px;
+}

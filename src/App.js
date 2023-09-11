@@ -3,6 +3,7 @@ import Navbar from 'component/Navbar';
 import MiddleNav from 'component/MiddleNav'; 
 import Carousel from 'component/Carousel';
 import Card from 'component/Card';
+import Footer from 'component/Footer';
 function App() {
   return (
     <div className="App">
@@ -10,6 +11,7 @@ function App() {
       <MiddleNav />
       <Carousel />
       <Card />
+      <Footer/>
     </div>
   );
 }
