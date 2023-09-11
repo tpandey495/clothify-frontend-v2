@@ -1,32 +1,22 @@
 .carousel{
-margin-top:20px;
+    background-color:rgba(26, 26, 26, 1);
 }
-
 .carousel-item{
     display:flex;
-    flex-direction:row;
+    flex-wrap:wrap;
     justify-content:space-between;
 }
 
-.carousel-left-item .carousel-line{
-    width:40%;
+.carousel-left-item{
+    width:50%;
 }
 
-.carousel-item .jessica-img{
-    width:432px;
-    height: 654.9508666992188px;
+.carousel-right-item .jessica{
+    background-image: url('assets/images/jessica.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    height: 500px;
+    width:300px; 
+    color: white; 
+    text-align: center; 
 }
-
-.carousel-rectangle{
-   position:relative;
-}
-
-.jessica{
-    background-image: url('assets/images/carouselreactangle.png');
-    background-size: cover;
-    background-position: center center;
-    background-color: #f0f0f0;
-    width: 100%;
-    height: 300px;
-  }
-  
