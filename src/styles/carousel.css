@@ -1,0 +1,32 @@
+.carousel{
+margin-top:20px;
+}
+
+.carousel-item{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+.carousel-left-item .carousel-line{
+    width:40%;
+}
+
+.carousel-item .jessica-img{
+    width:432px;
+    height: 654.9508666992188px;
+}
+
+.carousel-rectangle{
+   position:relative;
+}
+
+.jessica{
+    background-image: url('assets/images/carouselreactangle.png');
+    background-size: cover;
+    background-position: center center;
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 300px;
+  }
+  

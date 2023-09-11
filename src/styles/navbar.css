@@ -1,0 +1,52 @@
+.topNav{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;  
+    color:rgba(98, 98, 98, 1);
+    background-color:rgba(26, 26, 26, 1);
+    height:42px;  
+}
+
+.topNav-title{
+    font-size:12px;
+    display:flex;
+    gap:15px;
+    margin-left:20px;
+}
+
+.topNav .topNav-delivery{
+    display:flex;
+    gap:10px;
+}
+
+.topNav-delivery img{
+    width:21px;
+    height:12.9px;
+    margin-top:2px;
+}
+
+.topNav-right{
+    display:flex;
+    gap:20px;
+    font-size:10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .topNav-right > :nth-child(2) {
+       display:none;
+    }
+  }
+
+
+.social-media{
+    display:flex;
+    gap:10px;
+    margin-right:20px;
+}
+
+.social-media img{
+    width:8px;
+    height:7.64px;
+    margin-top:4px;
+}

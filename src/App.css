@@ -1,0 +1,12 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Mono&family=Syne&display=swap');
+ *{
+  margin:0;
+  border:0;
+  box-sizing:border-box;
+  background-color:rgba(26, 26, 26, 1);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'Syne', sans-serif;
+}
+
+

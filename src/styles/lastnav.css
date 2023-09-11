@@ -1,0 +1,63 @@
+.lastnav{
+    color:white;
+    font-size:18px;
+    font-weight:400;
+}
+/* Hamburger Icon */
+@media only screen and (min-width: 600px) {
+    .toggle-button{
+       display:none;
+    }
+  }
+/* Display Items of Navbar */
+.lastnav .lastnav-items{
+    display:flex;
+    list-style-type:none;
+    gap:40px;
+}
+.lastnav-collapse{
+    display:flex;
+    list-style-type:none;
+    gap:40px;
+    margin-left:5%;
+}
+/*Styling for DropDown */
+.dropdown-wrapper{
+    display:flex;
+    list-style-type:none;
+    position: relative;
+    cursor: pointer;
+    border-bottom:1px solid white;
+}
+/* Styling for the dropdown */
+.dropdown{
+    display:flex;
+    flex-direction:column;
+    list-style-type:none;
+    width:150px;
+    position: absolute;
+    top:27px;
+    left:-36px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+/* To handle the NavItems when screen size is less than 600px */
+/*To Hide the Nav-Items when hamburger menu is closed*/
+@media only screen and (max-width:600px){
+    .lastnav-collapse{
+        display:none;
+    }
+}
+  @media only screen and (max-width: 600px) {
+    .toggle-button{
+        position: relative;
+        left: 50%;
+        top: 22px;  
+     }
+    .lastnav .lastnav-items{
+       flex-direction:column;
+       position:absolute;
+        left:20%;
+        top:150px;
+    }
+  }
