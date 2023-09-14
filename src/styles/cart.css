@@ -1,0 +1,138 @@
+.cart{
+    display:flex;
+    flex-wrap:wrap;
+    width:80%;
+    margin:100px auto 100px auto;
+}
+
+.cart-item-wrapper{
+    width:600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.cart-item{
+    display:flex;
+    flex-wrap:wrap;
+    height:auto;
+    margin-top:10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Cart Image */
+.cart-item .item-image img{
+     width:300px;
+     height:300px;   
+}
+
+
+/* Card Details */
+
+.cart-details{
+ margin-left:10%;
+ display:flex;
+ flex-direction:column;
+ gap:20px;
+}
+
+.delete-div{
+    display:flex;
+    justify-content:space-between;
+}
+
+.delete-div button{
+    border-radius:8px;
+}
+
+.delete-div p{ 
+    line-height:20px;
+}
+
+.item-operation{
+    margin-top:40px;
+    display:flex;
+}
+
+.item-operation .product-name{
+    font-size:30px;
+    font-family:sans-serif;
+}
+
+.product-count{
+    margin-left:80px;
+    display: inline-block;
+}
+
+.product-count button{
+    line-height:40px;
+}
+
+/* Right Div*/
+.cart-description{
+    width:350px;
+    height:300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+
+.cart-description p{
+  margin-top:10px;
+  font-size:20px;   
+}
+
+.cart-description .product-amount{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-around;
+}
+
+.cart-description .line{
+    margin-top:20px;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(172, 157, 157);
+}
+
+.cart-description .total-amount{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-around;
+}
+
+.cart-count{
+    align-items:vertical;
+}
+
+.cart-description button{
+    margin-top:20px;
+    border-radius:5px;
+    background-color:#007bff;
+    border-color:none;
+    color:white;
+} 
+
+@media only screen and (max-width:900px){
+    .cart-description{
+        margin-top:20px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .cart{
+        width:95%;
+    }
+    .cart-item-wrapper{
+     width:300px;
+    }
+    .cart-description{
+        margin-top:50px;
+    }
+}

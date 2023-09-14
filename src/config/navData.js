@@ -5,8 +5,6 @@ const navbar = [
     { name: 'Product 1', id: 'p1'},
     { name: 'Product 2', id: 'p2' },
     { name: 'Product 3', id: 'p3'},
-    { name: 'Product 4', id: 'p4' },
-    { name: 'Product 5', id: 'p5' },
     ] },
     { name: 'Contact Us', id: 'contact'},
 ];

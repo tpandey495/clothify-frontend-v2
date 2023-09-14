@@ -1,18 +1,16 @@
 import './App.css';
-import Navbar from 'component/Navbar';
-import MiddleNav from 'component/MiddleNav'; 
-import Carousel from 'component/Carousel';
-import Card from 'component/Card';
-import Footer from 'component/Footer';
-function App() {
+import Home from 'pages/home';
+import Cart from 'pages/cart';
+import Navbar from 'component/wholeNavbar';
+import { Routes, Route } from 'react-router-dom';
+const App=()=>{
   return (
-    <div className="App">
-      <Navbar />
-      <MiddleNav />
-      <Carousel />
-      <Card />
-      <Footer/>
-    </div>
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+          <Route index element={<Home />}></Route>
+          <Route path="cart" element={<Cart />}></Route>
+        </Route>
+      </Routes>
   );
 }
 
