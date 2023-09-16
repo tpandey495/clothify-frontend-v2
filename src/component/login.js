@@ -13,7 +13,7 @@ const LoginPopup = ({ onClose }) => {
           <button type="submit">Login</button>
           <button type="button" onClick={onClose}>Close</button>
         </form>
-        <p>Don't have an account? <a href="/registration">Register here</a></p>
+        <p>Don't have an account? <a href="/signup">Register here</a></p>
       </div>
     </div>
   );
