@@ -57,6 +57,7 @@ const Registration = () => {
               value={formData.username}
               onChange={handleInputChange}
               placeholder="Username"
+              autoComplete='username'
               required
             />
           </div>
@@ -68,6 +69,7 @@ const Registration = () => {
               value={formData.firstName}
               onChange={handleInputChange}
               placeholder="First Name"
+              autoComplete='firstname'
               required
             />
           </div>
@@ -79,6 +81,7 @@ const Registration = () => {
               value={formData.lastName}
               onChange={handleInputChange}
               placeholder="Last Name"
+              autoComplete='lastname'
               required
             />
           </div>
@@ -90,6 +93,7 @@ const Registration = () => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email"
+              autoComplete='email'
               required
             />
           </div>
@@ -101,6 +105,7 @@ const Registration = () => {
               value={formData.password}
               onChange={handleInputChange}
               placeholder="Password"
+              autoComplete="new-password"
               required
             />
           </div>
@@ -112,6 +117,7 @@ const Registration = () => {
               value={formData.confirmpassword}
               onChange={handleInputChange}
               placeholder="Confirm Password"
+              autoComplete="new-password"
               required
             />
           </div>
