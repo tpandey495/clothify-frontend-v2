@@ -7,7 +7,6 @@ import useWindowWidth from "utils/windowWidth";
 const MiddleNav = () => {
   const count = 0;
   const windowWidth = useWindowWidth();
-  console.log(windowWidth)
   return (
     <div className="header">
       <div className="middle-navbar">
