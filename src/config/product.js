@@ -4,7 +4,7 @@ const products = [
     name: "Casual Shirt",
     image: "https://res.cloudinary.com/dollv6prp/image/upload/v1661505318/hn76mf1ed2gosmtjpvtt.jpg",
     rating: 4.5,
-    price: 10
+    price: 10,
   },
   {
     id: 2,
