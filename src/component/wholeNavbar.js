@@ -4,7 +4,7 @@ import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
 const wholeNavbar = () => {
     return (
-        <div>
+        <div >
             <Navbar />
             <MiddleNav />
              <Outlet />
