@@ -6,12 +6,17 @@ import instagram from "assets/images/instagram.png";
 import linkedin from "assets/images/linkedin.png";
 import twitter from "assets/images/twitter.png";
 import Login from '../login';
+import {useDispatch,useSelector} from "react-redux";
+
 const Navbar = () => {
   const [showLoginPopup,setShowLoginPopup]=useState(false);
 
   const toggleLoginPopup = () => {
     setShowLoginPopup(!showLoginPopup);
   };
+
+  const user=useSelector((state) => state?.auth?.islogdin);
+
 
   return (
     <div className="topNav">
@@ -25,7 +30,13 @@ const Navbar = () => {
       </div>
       <div className="topNav-right">
         {showLoginPopup&&<Login onClose={toggleLoginPopup}/>}
+      {
+        console.log(user)
+      }
+      {
+       user?<p>Profile</p>:
         <p onClick={toggleLoginPopup}>Login</p>
+      }
         <p>Follow US</p>
         <div className="social-media">
           <img src={facebook} alt="facebook icon" />

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {useDispatch,useSelector} from "react-redux";
+import {loginUser} from "store/userSlice";
 import 'styles/login.css';
 
 const LoginPopup = ({ onClose }) => {
@@ -7,6 +9,9 @@ const LoginPopup = ({ onClose }) => {
     email: '',
     password: '',
   });
+
+  const dispatch=useDispatch();
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -18,6 +23,21 @@ const LoginPopup = ({ onClose }) => {
 
   const handleSubmit =async(event) => {
     event.preventDefault();
+    dispatch(loginUser(formData))
+    .unwrap()
+    .then(()=>{
+     onClose();
+     window.location.reload();
+    })
+    .catch((err)=>{
+      if (typeof err === 'string') {
+        setErrmsg(err); // If err is a string error message
+      } else if (err && err.message) {
+        setErrmsg(err.message); // If err is an error object with a message property
+      } else {
+        setErrmsg("An unknown error occurred.");
+      }
+    })
   };
 
   return (
