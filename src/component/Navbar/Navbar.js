@@ -31,9 +31,6 @@ const Navbar = () => {
       <div className="topNav-right">
         {showLoginPopup&&<Login onClose={toggleLoginPopup}/>}
       {
-        console.log(user)
-      }
-      {
        user?<p>Profile</p>:
         <p onClick={toggleLoginPopup}>Login</p>
       }
