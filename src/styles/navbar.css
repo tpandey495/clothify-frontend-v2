@@ -32,6 +32,10 @@
     font-size:10px;
 }
 
+.topNav-right p{
+    cursor:pointer;
+}
+
 @media only screen and (max-width: 600px) {
     .topNav-right > :nth-child(2) {
        display:none;

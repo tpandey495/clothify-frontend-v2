@@ -13,8 +13,7 @@ const MiddleNav = () => {
         <div className="middle-title">ShopKart</div>
         {windowWidth > 600 ? (
           <ul className="middle-items">
-            <li>WISHLIST ({count})</li>
-            <li>BAG ({count})</li>
+            <li>Cart({count})</li>
           </ul>
         ) : (
           <LastNav />
