@@ -1,4 +1,4 @@
-export const Base_URL = "http://localhost:4444/api";
+export const Base_URL = "https://clothify-backend-iyws.onrender.com/api";
 
 export const METHOD_TYPE = {
     GET: "GET",
