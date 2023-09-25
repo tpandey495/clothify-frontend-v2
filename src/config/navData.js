@@ -2,9 +2,9 @@ const navbar = [
     { name: 'Home', id: 'home'},
     { name: 'About', id: 'about' },
     { name: 'Our Products', id: 'product', child: [
-    { name: 'Product 1', id: 'p1'},
-    { name: 'Product 2', id: 'p2' },
-    { name: 'Product 3', id: 'p3'},
+    { name: 'Women clothes', id: 'p1'},
+    { name: "kid clothes", id: 'p2' },
+    { name: "Men clothes", id: 'p3'},
     ] },
     { name: 'Contact Us', id: 'contact'},
 ];
