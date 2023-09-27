@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "store/productSlice";
+import {add,clearWarning} from "store/cartSlice";
+import useNotification from "utils/useNotification";
 import 'styles/card.css';
 
 
 const ProductCard = () => {
   const [products, setProducts] = useState([]);
   const [errMsg, setErrMsg] = useState("");
+  //selecting all the states from backend
   const dispatch = useDispatch();
+  const islogdin=useSelector((state)=>state?.auth?.islogdin);
+  const warning=useSelector((state)=>state?.cart?.warning);
 
+  const addtoCart=(productid)=>{
+    const cartItem={islogdin:islogdin,item:productid}
+       dispatch(add(cartItem));
+  }
+
+  // Fetching Latest product for recommending on homepage
   useEffect(() => {
     dispatch(fetchProduct())
       .unwrap()
@@ -27,6 +38,12 @@ const ProductCard = () => {
   }, [dispatch]);
 
 
+   const {notification,showNotification, hideNotification } = useNotification();
+   useEffect(()=>{
+      showNotification(warning,"warning");
+      dispatch(clearWarning());
+   },[warning])
+ 
   return (
     <div className="exclusive-product">
         <h1>Exclusively Crafted by Top Designers for You</h1>
@@ -45,6 +62,13 @@ const ProductCard = () => {
           <button type="submit">Search</button>
         </form>
       </div>
+      {
+      notification && (
+        <div className={`notification ${notification.type}`}>
+          {notification?.message}
+          <button onClick={hideNotification}>Close</button>
+        </div>)
+       }
       <div className="card-wrapper">
         {
           products && products.map((product) =>
@@ -55,7 +79,7 @@ const ProductCard = () => {
                 <p className="product-rating">Rating:{product?.rating}</p>
                 <p className="product-price">Price: &#36;{product?.price}</p>
               </div>
-              <button className="add-to-cart-button">Add to Cart</button>
+              <button className="add-to-cart-button" onClick={()=>addtoCart(product?._id)}>Add to Cart</button>
             </div>
           )
         }

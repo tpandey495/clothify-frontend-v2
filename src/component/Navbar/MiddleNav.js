@@ -3,9 +3,10 @@ import "styles/middlenavbar.css";
 import line from "assets/images/line.png";
 import LastNav from "./LastNav";
 import useWindowWidth from "utils/windowWidth";
-
+import { UseSelector, useSelector } from "react-redux";
 const MiddleNav = () => {
-  const count = 0;
+  const count = useSelector((state)=>state?.cart?.cartsize);
+
   const windowWidth = useWindowWidth();
   return (
     <div className="header">
@@ -15,7 +16,7 @@ const MiddleNav = () => {
           <ul className="middle-items">
             <li>Cart({count})</li>
           </ul>
-        ) : (
+        ):(
           <LastNav />
         )}
       </div>
