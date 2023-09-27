@@ -23,11 +23,24 @@
     font-size:40px;
 }
 
+.middle-navbar .middle-title a{
+    text-decoration:none;
+    cursor: pointer;
+    color:inherit;
+}
+
 .middle-navbar ul li{
     font-size:14px;
     font-weight:400;
     cursor:pointer; 
+    text-decoration:none;
 }
+
+.middle-navbar ul li a{ 
+    text-decoration:none;
+    color:inherit;
+}
+
 
 .header img{
     width:90%;
