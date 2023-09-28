@@ -1,4 +1,3 @@
-
 import "styles/carousel.css";
 const Carousel = () => {
   return (

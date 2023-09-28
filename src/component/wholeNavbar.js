@@ -1,14 +1,12 @@
 import Navbar from './Navbar/Navbar';
 import MiddleNav from './Navbar/MiddleNav';
-import Footer from './Footer';
-import { Outlet } from 'react-router-dom';
+
 const wholeNavbar = () => {
     return (
-        <div >
+        <div className="wholeNavbar" style={{position: "fixed",
+            width:"100%",top:"0"}}>
             <Navbar />
             <MiddleNav />
-             <Outlet />
-            <Footer />
         </div>
     )
 }

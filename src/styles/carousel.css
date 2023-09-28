@@ -11,6 +11,10 @@
     width:50%;
 }
 
+.carousel-right-item{
+    margin-top:100px;
+}
+
 .carousel-right-item .jessica{
     background-image: url('assets/images/jessica.png'); 
     background-size: cover; 

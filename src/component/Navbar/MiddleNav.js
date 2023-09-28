@@ -10,6 +10,7 @@ const MiddleNav = () => {
 
   const windowWidth = useWindowWidth();
   return (
+    <>
     <div className="header">
       <div className="middle-navbar">
         <div className="middle-title"><Link to="/">ShopKart</Link></div>
@@ -24,6 +25,7 @@ const MiddleNav = () => {
       <img src={line} alt="line-img" />
       {windowWidth > 600 && <LastNav />}
     </div>
+    </>
   );
 };
 
