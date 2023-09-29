@@ -11,9 +11,9 @@ const initialState = {
 
 export const fetchProduct = createAsyncThunk(
   "product/fetchProduct", // Use the correct slice name
-  async (_, { rejectWithValue }) => {
+  async (payload, { rejectWithValue }) => {
     try {
-      const responseData = await fetchAndProcessData("/product", "GET", null);
+      const responseData = await fetchAndProcessData(`/product?type=${payload}`, "GET",null);
       return responseData;
     } catch (error) {
       throw rejectWithValue(

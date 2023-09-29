@@ -1,30 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "store/productSlice";
-import {add,clearWarning} from "store/cartSlice";
+import { add, clearWarning } from "store/cartSlice";
 import useNotification from "utils/useNotification";
-import  { fetchAndProcessData } from 'utils/apiaxios';
+import { fetchAndProcessData } from 'utils/apiaxios';
 import 'styles/card.css';
 
 
 const ProductCard = () => {
   const [products, setProducts] = useState([]);
   const [errMsg, setErrMsg] = useState("");
+  const [selectcateg,setSelectcateg]=useState("");
   //selecting all the states from backend
   const dispatch = useDispatch();
-  const islogdin=useSelector((state)=>state?.auth?.islogdin);
-  const warning=useSelector((state)=>state?.cart?.warning);
-  const user=useSelector((state)=>state?.auth?.user);
-  const addtoCart=async(productid)=>{
-    const cartItem={islogdin:islogdin,item:productid}
-      await dispatch(add(cartItem));
-       if(islogdin&&warning==""){
-           fetchAndProcessData("/cart","POST",{productid:productid,userid:user._id});
-       }    
+  const islogdin = useSelector((state) => state?.auth?.islogdin);
+  const warning = useSelector((state) => state?.cart?.warning);
+  const user = useSelector((state) => state?.auth?.user);
+
+  const addtoCart = async (productid) => {
+    const cartItem = { islogdin: islogdin, item: productid }
+    await dispatch(add(cartItem));
+    if (islogdin && warning == "") {
+      fetchAndProcessData("/cart", "POST", { productid: productid, userid: user._id });
+    }
   }
   // Fetching Latest product for recommending on homepage
   useEffect(() => {
-    dispatch(fetchProduct())
+    dispatch(fetchProduct(selectcateg))
       .unwrap()
       .then((res) => {
         setProducts(res.products);
@@ -38,26 +40,32 @@ const ProductCard = () => {
           setErrMsg("An unknown error occurred.");
         }
       });
-  }, [dispatch]);
+  }, [selectcateg,dispatch]);
 
 
-   const {notification,showNotification, hideNotification } = useNotification();
-   useEffect(()=>{
-      showNotification(warning,"warning");
-      dispatch(clearWarning());
-   },[warning])
- 
+  const { notification, showNotification, hideNotification } = useNotification();
+  useEffect(() => {
+    showNotification(warning, "warning");
+    dispatch(clearWarning());
+  }, [warning])
+
+
+  const handleCategoryChange = (event) => {
+    setSelectcateg(event.target.value);
+  };
+
+
   return (
     <div className="exclusive-product">
-        <h1>Exclusively Crafted by Top Designers for You</h1>
+      <h1>Exclusively Crafted by Top Designers for You</h1>
       <div className="filter_search">
         <form className="category-form">
           <label htmlFor="category">Category:</label>
-          <select id="category">
-            <option value="all">All</option>
-            <option value="women">Women</option>
-            <option value="kids">Kids</option>
-            <option value="men">Men</option>
+          <select id="category" value={selectcateg} onChange={handleCategoryChange}>
+            <option value="All">All</option>
+            <option value="1">Women</option>
+            <option value="0">Kids</option>
+            <option value="2">Men</option>
           </select>
         </form>
         <form className="search-form">
@@ -66,12 +74,12 @@ const ProductCard = () => {
         </form>
       </div>
       {
-      notification && (
-        <div className={`notification ${notification.type}`}>
-          {notification?.message}
-          <button onClick={hideNotification}>Close</button>
-        </div>)
-       }
+        notification && (
+          <div className={`notification ${notification.type}`}>
+            {notification?.message}
+            <button onClick={hideNotification}>Close</button>
+          </div>)
+      }
       <div className="card-wrapper">
         {
           products && products.map((product) =>
@@ -82,7 +90,7 @@ const ProductCard = () => {
                 <p className="product-rating">Rating:{product?.rating}</p>
                 <p className="product-price">Price: &#36;{product?.price}</p>
               </div>
-              <button className="add-to-cart-button" onClick={()=>addtoCart(product?._id)}>Add to Cart</button>
+              <button className="add-to-cart-button" onClick={() => addtoCart(product?._id)}>Add to Cart</button>
             </div>
           )
         }
