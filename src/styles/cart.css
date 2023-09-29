@@ -1,7 +1,7 @@
 .cart{
     display:flex;
     flex-wrap:wrap;
-    width:80%;
+    width:90%;
     margin:200px auto 100px auto;
 }
 
