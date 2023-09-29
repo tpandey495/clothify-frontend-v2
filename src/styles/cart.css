@@ -6,7 +6,7 @@
 }
 
 .cart-item-wrapper{
-    width:600px;
+    width:750px;
     margin-left:auto;
     margin-right:auto;
 }
@@ -62,7 +62,7 @@
 }
 
 .product-count{
-    margin-left:80px;
+    margin-left:50px;
     display: inline-block;
 }
 
@@ -125,7 +125,7 @@
     }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 950px) {
     .cart{
         width:95%;
     }
@@ -134,5 +134,8 @@
     }
     .cart-description{
         margin-top:50px;
+    }
+    .item-operation .product-name{
+        max-width:100px;
     }
 }
