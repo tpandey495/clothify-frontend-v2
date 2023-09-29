@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "store/productSlice";
 import {add,clearWarning} from "store/cartSlice";
 import useNotification from "utils/useNotification";
+import  { fetchAndProcessData } from 'utils/apiaxios';
 import 'styles/card.css';
 
 
@@ -13,12 +14,14 @@ const ProductCard = () => {
   const dispatch = useDispatch();
   const islogdin=useSelector((state)=>state?.auth?.islogdin);
   const warning=useSelector((state)=>state?.cart?.warning);
-
-  const addtoCart=(productid)=>{
+  const user=useSelector((state)=>state?.auth?.user);
+  const addtoCart=async(productid)=>{
     const cartItem={islogdin:islogdin,item:productid}
-       dispatch(add(cartItem));
+      await dispatch(add(cartItem));
+       if(islogdin&&warning==""){
+           fetchAndProcessData("/cart","POST",{productid:productid,userid:user._id});
+       }    
   }
-
   // Fetching Latest product for recommending on homepage
   useEffect(() => {
     dispatch(fetchProduct())

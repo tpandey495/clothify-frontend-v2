@@ -18,6 +18,7 @@ export const fetchAndProcessData = async (url, method, data) => {
     if (error?.response?.data?.error) {
       throw new Error(error?.response?.data?.error);
     } else {
+      console.log(error);
       throw new Error("An error occurred while making the request.");
     }
   }

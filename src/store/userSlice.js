@@ -1,11 +1,15 @@
 // userSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchAndProcessData } from "utils/apiaxios"; // Import your global API function
+import jwtDecode from "jwt-decode";
 
-const user=JSON.parse(localStorage.getItem("user"));
+let user=JSON.parse(localStorage.getItem("user"));
+if(user)
+  user=jwtDecode(user);
 
 const initialState={
   users: [],
+  user:user,
   islogdin:user?true:false,
   data: null,
   error: null,
@@ -34,7 +38,6 @@ export const loginUser=createAsyncThunk(
       localStorage.setItem("user", JSON.stringify(responseData?.token));
       return responseData;
       }catch(error){
-        console.log(error)
        throw rejectWithValue(error.message||"An error occurred while making the request.")
       }
    }
