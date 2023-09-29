@@ -6,7 +6,7 @@ const Home=()=>{
   return (
     <div>
         <Carousel />
-        <Card />
+        <Card  type=""/>
     </div>
   );
 }

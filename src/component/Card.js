@@ -7,10 +7,10 @@ import { fetchAndProcessData } from 'utils/apiaxios';
 import 'styles/card.css';
 
 
-const ProductCard = () => {
+const ProductCard = ({type}) => {
   const [products, setProducts] = useState([]);
   const [errMsg, setErrMsg] = useState("");
-  const [selectcateg,setSelectcateg]=useState("");
+  const [selectcateg,setSelectcateg]=useState(type);
   //selecting all the states from backend
   const dispatch = useDispatch();
   const islogdin = useSelector((state) => state?.auth?.islogdin);

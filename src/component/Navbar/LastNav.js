@@ -4,12 +4,13 @@ import navData from 'config/navData';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RxCross1 } from 'react-icons/rx';
 import useClickOutside from 'utils/useClickOutside'; 
+import {Link} from 'react-router-dom';
 
 const DropDown = React.forwardRef(({ dropItem }, ref) => {
   return (
     <ul className="dropdown" ref={ref}>
       {dropItem.map((childitem) => (
-        <li key={childitem?.id}>{childitem?.name}</li>
+       <Link to={childitem?.path}><li key={childitem?.id}>{childitem?.name}</li></Link>
       ))}
     </ul>
   );
